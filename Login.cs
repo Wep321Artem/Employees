@@ -37,13 +37,13 @@ namespace EMP_WPF_FR
         public JuniorSalesman JunSale = null;
         public SeniorManager Senmanage = null;
         public JuniorManager Junmanage = null;
+        private MainWindow mainWindow;
 
-        public MainWindow main = new MainWindow();
-
-        public Login(TextBox BoxLogin, PasswordBox BoxPassword)
+        public Login(TextBox BoxLogin, PasswordBox BoxPassword, MainWindow mainWindow)
         {
             this.BoxLogin = BoxLogin;
             this.BoxPassword = BoxPassword;
+            this.mainWindow = mainWindow;
             login = BoxLogin.Text.Trim();
             password = BoxPassword.Password.Trim();
             Empl = db.Employees.Where(log => log.Login == login && log.Password == password).FirstOrDefault();
@@ -109,12 +109,16 @@ namespace EMP_WPF_FR
                     {
                         verification = true;
                         info_w.Show();
+                        
                         info_w.Hello.Content = "Добро пожаловать, " + el_user.FIO;
                         el_user.Salary = FinalSalaryData(el_user);
                         info_w.Salary.Content = el_user.Salary;
                         info_w.FIO.Content = el_user.FIO;
                         info_w.Main.Children.Remove(info_w.AddUser);
-                       
+
+                        mainWindow.Close();
+
+
 
 
                         if (el_user == Senmanage || el_user == Sensale || el_user == Junmanage)
@@ -143,7 +147,8 @@ namespace EMP_WPF_FR
 
                         info_w.BorderForData.Height = rowHeight + GridLen + 30;
                         info_w.Height = rowHeight + GridLen + 230;
-                        main.Close();
+                       
+
 
                     }
 
@@ -156,6 +161,7 @@ namespace EMP_WPF_FR
                     {
                         verification = true;
                         info_w.Show();
+                       
                         info_w.Hello.Content = "Добро пожаловать, " + el_user1.FIO;
                         info_w.FIO.Content = el_user1.FIO;
                         info_w.AddUser.Visibility = Visibility.Visible;
@@ -167,7 +173,7 @@ namespace EMP_WPF_FR
 
 
 
-                        main.Close();
+                        mainWindow.Close();
                         //Изменения параметры формы
                         info_w.GridForData.Children.Remove(info_w.HeadingSalary);
 
@@ -209,7 +215,7 @@ namespace EMP_WPF_FR
 
         public void SetDataTable(string query)
         {
-            string dbPath = "Users.db";////////////////////////////////////////////////////////////////////
+            string dbPath = "Users.db";
             using (var connection = new SQLiteConnection($"Data Source={dbPath}"))
             {
                 using (var command = new SQLiteCommand(query, connection))
@@ -371,6 +377,8 @@ namespace EMP_WPF_FR
             string result = string.Join(", ", columnData);
             return 0.0;
         }
+
+       
 
 
     }

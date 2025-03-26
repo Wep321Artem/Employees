@@ -45,7 +45,7 @@ namespace EMP_WPF_FR
         {
             try
             {
-                string connectionString = "Data Source=Users.db";/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                string connectionString = "Data Source=Users.db";
                 using (var connection = new SqliteConnection(connectionString))
                 {
                     connection.Open();
@@ -78,7 +78,7 @@ namespace EMP_WPF_FR
         {
 
             List<string> columnNames = new List<string>();
-            string connectionString = $"Data Source=Users.db";//////////////////////////////////////////////////////////////////////////////////////////////////////
+            string connectionString = $"Data Source=Users.db";
             using (SQLiteConnection connection = new SQLiteConnection(connectionString))
             {
                 connection.Open();
@@ -117,7 +117,7 @@ namespace EMP_WPF_FR
                 ["JuniorSalesmans"] = "SeniorSalesmans"
             };
 
-            string connectionString = $"Data Source=Users.db";/////////////////////////////////////////////////////////////////////////////////////////////////
+            string connectionString = $"Data Source=Users.db";
             string queryValuColumn = $@"SELECT {GetLastColimnName(TableName)} FROM {jun_and_sen[TableName]} WHERE FIO = '{selectedValue}'"; //{selectedValue}";
 
             using (SQLiteConnection connection = new SQLiteConnection(connectionString))
@@ -296,7 +296,7 @@ namespace EMP_WPF_FR
         // добавления данных в ComboBox
         public void ComboBoxDirector(ComboBox comboBox, string query) 
         {
-            string connectionString = "Data Source=Users.db";////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            string connectionString = "Data Source=Users.db";
 
             using (var connection = new SQLiteConnection(connectionString))
             {

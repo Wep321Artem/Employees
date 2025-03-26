@@ -102,7 +102,7 @@ namespace EMP_WPF_FR
         // Расчёт финальной зарплаты пользователя
         public double resSalary(double Salary, string query, string DateWork, double ExperiencePrecent, double LimExperiencePrecent, double SubordinatesSalariesPrecent)
         {
-            string dbPath = "Users.db";///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            string dbPath = "Users.db";
             string connectionString = $"Data Source = {dbPath};";
             double salary_jun = 0;
 

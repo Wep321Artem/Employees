@@ -26,7 +26,7 @@ namespace EMP_WPF_FR
 
         public void Next(object sender, RoutedEventArgs e)
         {
-            Login login = new Login(Login, Password);
+            Login login = new Login(Login, Password, this);
 
            
         }
