@@ -60,6 +60,7 @@ namespace EMP_WPF_FR
                     }
                     connection.Close();
                 }
+                MessageBox.Show("Пользователь зарегистрировался");
             }
 
             catch(InvalidOperationException)
@@ -228,6 +229,7 @@ namespace EMP_WPF_FR
         }
         public void AddUserMain()
         {
+
             var ValueComboBoxPost = new Dictionary<string, string>()
             {
                 ["Работник"] = "Employees",
@@ -261,10 +263,12 @@ namespace EMP_WPF_FR
                     if (ValueComboBoxPost.ContainsKey(selectedText))
                     {
                         AddUserInit(ValueComboBoxPost[selectedText]);
-                        MessageBox.Show("Регистрация окончена");
+
+                   
                     }
                     else
                     {
+                        
                         MessageBox.Show("Выбранная должность не найдена!");
                     }
             }
