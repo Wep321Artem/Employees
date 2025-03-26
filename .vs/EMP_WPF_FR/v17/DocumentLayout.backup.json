@@ -1,0 +1,155 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\C# project\\EMP_WPF_FR\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3ECC2B0B-AF0F-4710-A1CC-BCD31330FE14}|EMP_WPF_FR.csproj|D:\\C# project\\EMP_WPF_FR\\adduser.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3ECC2B0B-AF0F-4710-A1CC-BCD31330FE14}|EMP_WPF_FR.csproj|solutionrelative:adduser.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3ECC2B0B-AF0F-4710-A1CC-BCD31330FE14}|EMP_WPF_FR.csproj|D:\\C# project\\EMP_WPF_FR\\adduser.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{3ECC2B0B-AF0F-4710-A1CC-BCD31330FE14}|EMP_WPF_FR.csproj|solutionrelative:adduser.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3ECC2B0B-AF0F-4710-A1CC-BCD31330FE14}|EMP_WPF_FR.csproj|D:\\C# project\\EMP_WPF_FR\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{3ECC2B0B-AF0F-4710-A1CC-BCD31330FE14}|EMP_WPF_FR.csproj|solutionrelative:app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3ECC2B0B-AF0F-4710-A1CC-BCD31330FE14}|EMP_WPF_FR.csproj|d:\\c# project\\emp_wpf_fr\\info.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3ECC2B0B-AF0F-4710-A1CC-BCD31330FE14}|EMP_WPF_FR.csproj|solutionrelative:info.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3ECC2B0B-AF0F-4710-A1CC-BCD31330FE14}|EMP_WPF_FR.csproj|D:\\C# project\\EMP_WPF_FR\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3ECC2B0B-AF0F-4710-A1CC-BCD31330FE14}|EMP_WPF_FR.csproj|solutionrelative:user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3ECC2B0B-AF0F-4710-A1CC-BCD31330FE14}|EMP_WPF_FR.csproj|D:\\C# project\\EMP_WPF_FR\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3ECC2B0B-AF0F-4710-A1CC-BCD31330FE14}|EMP_WPF_FR.csproj|solutionrelative:login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3ECC2B0B-AF0F-4710-A1CC-BCD31330FE14}|EMP_WPF_FR.csproj|D:\\C# project\\EMP_WPF_FR\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3ECC2B0B-AF0F-4710-A1CC-BCD31330FE14}|EMP_WPF_FR.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3ECC2B0B-AF0F-4710-A1CC-BCD31330FE14}|EMP_WPF_FR.csproj|D:\\C# project\\EMP_WPF_FR\\applicationcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3ECC2B0B-AF0F-4710-A1CC-BCD31330FE14}|EMP_WPF_FR.csproj|solutionrelative:applicationcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Login.cs",
+              "DocumentMoniker": "D:\\C# project\\EMP_WPF_FR\\Login.cs",
+              "RelativeDocumentMoniker": "Login.cs",
+              "ToolTip": "D:\\C# project\\EMP_WPF_FR\\Login.cs",
+              "RelativeToolTip": "Login.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-26T00:07:34.825Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ApplicationContext.cs",
+              "DocumentMoniker": "D:\\C# project\\EMP_WPF_FR\\ApplicationContext.cs",
+              "RelativeDocumentMoniker": "ApplicationContext.cs",
+              "ToolTip": "D:\\C# project\\EMP_WPF_FR\\ApplicationContext.cs",
+              "RelativeToolTip": "ApplicationContext.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABwAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-26T00:01:09.446Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AddUser.xaml",
+              "DocumentMoniker": "D:\\C# project\\EMP_WPF_FR\\AddUser.xaml",
+              "RelativeDocumentMoniker": "AddUser.xaml",
+              "ToolTip": "D:\\C# project\\EMP_WPF_FR\\AddUser.xaml",
+              "RelativeToolTip": "AddUser.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-03-25T23:49:04.976Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AddUser.xaml.cs",
+              "DocumentMoniker": "D:\\C# project\\EMP_WPF_FR\\AddUser.xaml.cs",
+              "RelativeDocumentMoniker": "AddUser.xaml.cs",
+              "ToolTip": "D:\\C# project\\EMP_WPF_FR\\AddUser.xaml.cs",
+              "RelativeToolTip": "AddUser.xaml.cs",
+              "ViewState": "AgIAABkBAAAAAAAAAAAuwKAAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-25T20:17:06.361Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "D:\\C# project\\EMP_WPF_FR\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "MainWindow.xaml.cs",
+              "ToolTip": "D:\\C# project\\EMP_WPF_FR\\MainWindow.xaml.cs",
+              "RelativeToolTip": "MainWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-25T23:15:33.724Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "App.config",
+              "DocumentMoniker": "D:\\C# project\\EMP_WPF_FR\\App.config",
+              "RelativeDocumentMoniker": "App.config",
+              "ToolTip": "D:\\C# project\\EMP_WPF_FR\\App.config",
+              "RelativeToolTip": "App.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-03-25T20:16:13.389Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Info.xaml.cs",
+              "DocumentMoniker": "D:\\C# project\\EMP_WPF_FR\\Info.xaml.cs",
+              "RelativeDocumentMoniker": "Info.xaml.cs",
+              "ToolTip": "D:\\C# project\\EMP_WPF_FR\\Info.xaml.cs",
+              "RelativeToolTip": "Info.xaml.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-25T20:16:04.482Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\C# project\\EMP_WPF_FR\\User.cs",
+              "RelativeDocumentMoniker": "User.cs",
+              "ToolTip": "D:\\C# project\\EMP_WPF_FR\\User.cs",
+              "RelativeToolTip": "User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGoAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-25T20:15:00.048Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
