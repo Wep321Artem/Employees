@@ -20,13 +20,17 @@ namespace EMP_WPF_FR
         {   
             InitializeComponent(); 
         }
-        public void Adduser( object sender, RoutedEventArgs e)
+
+
+        public void Adduser(object sender, RoutedEventArgs e)
         {
-            
+
             AddUser AddUser = new AddUser();
             AddUser.Show();
             this.Close();
 
         }
+
+
     }
 }

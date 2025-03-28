@@ -1,0 +1,51 @@
+﻿<Window x:Class="EMP_WPF_FR.SetdateWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EMP_WPF_FR"
+        mc:Ignorable="d"
+        Title="SetDataWindows" Height="250" Width="400"
+        WindowStartupLocation="CenterScreen">
+    
+    
+    <Window.Resources>
+        <Style x:Key="Style_Hello">
+
+            <Setter Property="Control.FontSize" Value="15"/>
+            <Setter Property="Control.Margin" Value="0,20,0,5"/>
+            <Setter Property="Control.FontFamily" Value="Arial"/>
+            <Setter Property="Control.HorizontalAlignment" Value="Center"/>
+        </Style>
+
+    </Window.Resources>
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+        </Grid.RowDefinitions>
+
+
+        <Label Content="Введите дату для рассчёта заработной платы" Style="{StaticResource Style_Hello}" Grid.Row="0"/>
+        <DatePicker x:Name="DateSalary" SelectedDateFormat="Short"  Margin="0,0,0,10" FontSize="18" Grid.Row="1" Width="250">
+            <DatePicker.Resources>
+                <Style TargetType="DatePickerTextBox">
+                    <Setter Property="IsReadOnly" Value="True"/>
+                </Style>
+            </DatePicker.Resources>
+        </DatePicker>
+        <Button Content="Рассчитать" Width="150" Margin="10,0,0,10" Click="NewInfo" Grid.Row="2" Height="50"></Button>
+
+
+
+
+    </Grid>
+
+
+
+
+
+</Window>

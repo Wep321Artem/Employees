@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\C# project\EMP_WPF_FR\obj\Debug\
+D:\C# project\Employees\obj\Debug\
 EMP_WPF_FR
 none
 false
 DEBUG;TRACE
-D:\C# project\EMP_WPF_FR\App.xaml
-3-361354439
-2943661268
-111556613902
-36300497606
-AddUser.xaml;Info.xaml;MainWindow.xaml;
+D:\C# project\Employees\App.xaml
+4-992220357
+21068287956
+12892990400
+36381108326
+AddUser.xaml;Info.xaml;MainWindow.xaml;SetdateWindow.xaml;
 
 True
 

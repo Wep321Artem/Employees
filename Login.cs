@@ -30,6 +30,8 @@ namespace EMP_WPF_FR
 
         ApplicationContext db = new ApplicationContext();
 
+       // public User user = new User();
+
         public Employee Empl = null;
         public SuperUser SupUser = null;
         
@@ -37,13 +39,15 @@ namespace EMP_WPF_FR
         public JuniorSalesman JunSale = null;
         public SeniorManager Senmanage = null;
         public JuniorManager Junmanage = null;
-        private MainWindow mainWindow;
 
-        public Login(TextBox BoxLogin, PasswordBox BoxPassword, MainWindow mainWindow)
+        SetdateWindow SetDate;
+
+        public Login(TextBox BoxLogin, PasswordBox BoxPassword, SetdateWindow SetDate, DateTime? SelectedDate)
         {
+
             this.BoxLogin = BoxLogin;
             this.BoxPassword = BoxPassword;
-            this.mainWindow = mainWindow;
+            this.SetDate = SetDate;
             login = BoxLogin.Text.Trim();
             password = BoxPassword.Password.Trim();
             Empl = db.Employees.Where(log => log.Login == login && log.Password == password).FirstOrDefault();
@@ -52,7 +56,9 @@ namespace EMP_WPF_FR
             JunSale = db.JuniorSalesmans.Where(log => log.Login == login && log.Password == password).FirstOrDefault();
             Senmanage = db.SeniorManagers.Where(log => log.Login == login && log.Password == password).FirstOrDefault();
             Junmanage = db.JuniorManagers.Where(log => log.Login == login && log.Password == password).FirstOrDefault();
-   
+
+
+
             Check_input();
       
         }
@@ -116,7 +122,7 @@ namespace EMP_WPF_FR
                         info_w.FIO.Content = el_user.FIO;
                         info_w.Main.Children.Remove(info_w.AddUser);
 
-                        mainWindow.Close();
+                        SetDate.Close();
 
 
 
@@ -173,7 +179,7 @@ namespace EMP_WPF_FR
 
 
 
-                        mainWindow.Close();
+                        SetDate.Close();
                         //Изменения параметры формы
                         info_w.GridForData.Children.Remove(info_w.HeadingSalary);
 

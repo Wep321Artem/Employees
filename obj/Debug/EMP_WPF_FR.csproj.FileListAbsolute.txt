@@ -53,9 +53,9 @@ D:\C# project\EMP_WPF_FR\obj\Debug\EMP_WPF_FR.exe
 D:\C# project\EMP_WPF_FR\obj\Debug\EMP_WPF_FR.pdb
 D:\C# project\EMP_WPF_FR\obj\Debug\EMP_WPF_FR.csproj.SuggestedBindingRedirects.cache
 D:\C# project\EMP_WPF_FR\obj\Debug\EMP_WPF_FR.exe.config
+D:\C# project\Employees\bin\Debug\Users.db
 D:\C# project\Employees\bin\Debug\x86\e_sqlite3.dll
 D:\C# project\Employees\bin\Debug\x64\e_sqlite3.dll
-D:\C# project\Employees\bin\Debug\Users.db
 D:\C# project\Employees\bin\Debug\EMP_WPF_FR.exe.config
 D:\C# project\Employees\bin\Debug\EMP_WPF_FR.exe
 D:\C# project\Employees\bin\Debug\EMP_WPF_FR.pdb
@@ -94,6 +94,7 @@ D:\C# project\Employees\obj\Debug\EMP_WPF_FR.exe.config
 D:\C# project\Employees\obj\Debug\AddUser.g.cs
 D:\C# project\Employees\obj\Debug\Info.g.cs
 D:\C# project\Employees\obj\Debug\MainWindow.g.cs
+D:\C# project\Employees\obj\Debug\SetdateWindow.g.cs
 D:\C# project\Employees\obj\Debug\App.g.cs
 D:\C# project\Employees\obj\Debug\EMP_WPF_FR_Content.g.cs
 D:\C# project\Employees\obj\Debug\EMP_WPF_FR_MarkupCompile.cache
@@ -101,6 +102,7 @@ D:\C# project\Employees\obj\Debug\EMP_WPF_FR_MarkupCompile.lref
 D:\C# project\Employees\obj\Debug\AddUser.baml
 D:\C# project\Employees\obj\Debug\Info.baml
 D:\C# project\Employees\obj\Debug\MainWindow.baml
+D:\C# project\Employees\obj\Debug\SetdateWindow.baml
 D:\C# project\Employees\obj\Debug\EMP_WPF_FR.g.resources
 D:\C# project\Employees\obj\Debug\EMP_WPF_FR.Properties.Resources.resources
 D:\C# project\Employees\obj\Debug\EMP_WPF_FR.csproj.GenerateResource.cache

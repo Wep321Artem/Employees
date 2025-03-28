@@ -50,11 +50,26 @@ namespace EMP_WPF_FR
         public string Password { get; set; }
 
         public string DateWork { get; set; }
+        
+
+        public Info info = new Info();
+
+       
+        //public DateTime SelectedDate { get; set; }
+        //public void SetSelectedDate(DateTime SelectedDate)
+        //{
+        //    this.SelectedDate = SelectedDate;
+        //}
 
         public double Salary { get; set;}
 
 
         public User() { }
+
+        //public User(DateTime? SelectedDate) { this.SelectedDate = SelectedDate ?? DateTime.Today; }\
+
+         
+        
 
         public User(string FIO, string Login, string Password)
         {
@@ -85,19 +100,37 @@ namespace EMP_WPF_FR
 
         }
 
+
+        [NotMapped]
+        public static DateTime CurrentSelectedDate { get; private set; } = DateTime.Today;
+
+        public static void SetCurrentSelectedDate(DateTime date)
+        {
+            CurrentSelectedDate = date;
+        }
+
+       
         public int years(string DateWork)
         {
-            DateTime DateWorkInit = DateTime.ParseExact(DateWork, "dd.MM.yyyy", null);
-            DateTime today = DateTime.Today;
-            int years = today.Year - DateWorkInit.Year;
-
-            if (DateWorkInit > today.AddYears(-years))
+            try
             {
-                years--;
-            }
+                DateTime DateWorkInit = DateTime.ParseExact(DateWork, "dd.MM.yyyy", null);
+                int years = CurrentSelectedDate.Year - DateWorkInit.Year;
 
-            return years;
+
+                if (DateWorkInit > CurrentSelectedDate.AddYears(-years))
+                    years--;
+               
+                return years;
+            }
+            catch
+            {
+                return 0;
+            }
+            
+
         }
+
 
         // Расчёт финальной зарплаты пользователя
         public double resSalary(double Salary, string query, string DateWork, double ExperiencePrecent, double LimExperiencePrecent, double SubordinatesSalariesPrecent)
@@ -127,23 +160,34 @@ namespace EMP_WPF_FR
                     }
 
                 }
+                
 
                 connection.Close();
 
             }
 
+            
             int years = this.years(DateWork);
+
+
             double SalaryLim = Salary + Salary * LimExperiencePrecent;
             Salary = Salary + Salary * (ExperiencePrecent * years); 
             if (SalaryLim > Salary) { return Salary + (salary_jun * SubordinatesSalariesPrecent); }
             return SalaryLim + (salary_jun * SubordinatesSalariesPrecent);
         }
 
+
         public string SalaryrequestForJun(string ExperiencePrecent, string LimExperiencePrecent, string SubordinatesSalariesPrecent = "0")
         {
 
-            string query1 = $@"CAST((julianday('now') - julianday(
+
+            string currentDateFormatted = CurrentSelectedDate.ToString("yyyy-MM-dd");
+
+
+
+            string query1 = $@"CAST((julianday('{currentDateFormatted}') - julianday(
                             substr(jun.DateWork, 7, 4) || '-' || substr(jun.DateWork, 4, 2) || '-' || substr(jun.DateWork, 1, 2))) / 365.25 AS INTEGER)";
+
 
 
             string query2 = $@"CASE
@@ -189,6 +233,7 @@ namespace EMP_WPF_FR
             double SalaryLim = Salary + Salary * 0.30;
             Salary = Salary + Salary * (0.03 * years);
             if (SalaryLim > Salary) { return Salary; }
+            
             return SalaryLim;
 
         }
@@ -204,6 +249,7 @@ namespace EMP_WPF_FR
         public SeniorSalesman(int SeniorSalesmanID, string FIO, string Login, string Password, string DateWork, double Salary) : base(FIO, Login, Password, DateWork, Salary)
         {
             this.SeniorSalesmanID = SeniorSalesmanID;
+            
         }
 
         public override double FinalSalary(double Salary, string DateWork) 
@@ -262,7 +308,8 @@ namespace EMP_WPF_FR
 
         public string JualyDay(string post)
         {
-            return $@"CAST((julianday('now') - julianday(
+            string currentDateFormatted = CurrentSelectedDate.ToString("yyyy-MM-dd");
+            return $@"CAST((julianday('{currentDateFormatted}') - julianday(
                             substr({post}.DateWork, 7, 4) || '-' || substr({post}.DateWork, 4, 2) || '-' || substr({post}.DateWork, 1, 2))) / 365.25 AS INTEGER)";
 
 

@@ -5,12 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EMP_WPF_FR"
         mc:Ignorable="d"
-            Title="InfoWindow" Height="500" Width="1000">
+        Title="InfoWindow" Height="500" Width="1000"
+        WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <Style x:Key="Style_Hello">
 
             <Setter Property="Control.FontSize" Value="20"/>
-            <Setter Property="Control.Margin" Value="0,30,0,30"/>
+            <Setter Property="Control.Margin" Value="0,30,0,20"/>
             <Setter Property="Control.FontFamily" Value="Arial"/>
         </Style>
 
@@ -56,6 +57,7 @@
 
     <StackPanel x:Name="Main">
         <Label Content="Добро пожаловать, Иванов Александр Сергеевич" x:Name="Hello" Style="{StaticResource Style_Hello}" HorizontalAlignment ="Center"/>
+
 
         <StackPanel Orientation="Horizontal" Margin="30,0,30,0">
             <Border x:Name="BorderForData" Style="{StaticResource Border_for_info}" HorizontalAlignment="Left">

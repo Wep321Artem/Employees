@@ -6,7 +6,8 @@
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         xmlns:local="clr-namespace:EMP_WPF_FR"
         mc:Ignorable="d"
-                Title="AddUsers" Height="600" Width="1050">
+        Title="AddUsers" Height="600" Width="1050"
+        WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <Style x:Key ="StyleLabel">
             <Setter Property="Control.FontFamily" Value="Arial"/>

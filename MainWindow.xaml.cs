@@ -19,6 +19,8 @@ namespace EMP_WPF_FR
     public partial class MainWindow : Window
     {
         ApplicationContext db;
+        private SetdateWindow newWind;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -26,10 +28,13 @@ namespace EMP_WPF_FR
 
         public void Next(object sender, RoutedEventArgs e)
         {
-            Login login = new Login(Login, Password, this);
-
-           
+            // Предполагаем, что Login и Password — это свойства или поля этого окна,
+            // содержащие учетные данные пользователя
+            newWind = new SetdateWindow(this.Login, this.Password, this);
+            newWind.Show();
+            this.Close();
         }
-
     }
+
 }
+
