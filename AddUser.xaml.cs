@@ -22,6 +22,7 @@ using System.Windows.Controls.Primitives;
 using System.Security.Cryptography;
 using System.Data.SqlClient;
 using System.Windows.Input;
+using System.Web.UI.WebControls;
 
 namespace EMP_WPF_FR
 {
@@ -38,6 +39,13 @@ namespace EMP_WPF_FR
             AddUser addUser_win = new AddUser();
             info_win.Close();
             addUser_win.Show();
+
+        }
+
+        public void ErrtextBox(Border Border)
+        {
+            Border.Background = Brushes.Pink;
+            Border.Background = Brushes.Pink;
 
         }
 
@@ -60,7 +68,14 @@ namespace EMP_WPF_FR
                     }
                     connection.Close();
                 }
-                MessageBox.Show("Пользователь зарегистрировался");
+                MessageBox.Show("Пользователь зарегистрирован");
+                var color = (Color)ColorConverter.ConvertFromString("#AFB2B8");
+                BorderSalary.Background = new SolidColorBrush(color);
+                BorderPassword.Background = new SolidColorBrush(color);
+
+
+
+
             }
 
             catch(InvalidOperationException)
@@ -70,8 +85,13 @@ namespace EMP_WPF_FR
 
             catch (SqliteException ex ) when (ex.SqliteErrorCode == 19)
             {
-                MessageBox.Show("Пароль уже используется!");
-                Password.Background = Brushes.Pink;
+                if (Convert.ToInt32(Salary.Text)<0) { MessageBox.Show("Поле оклад не может быть отрицательным");  ErrtextBox(BorderSalary); }
+                else
+                {
+                    MessageBox.Show("Пароль уже используется!");
+                    ErrtextBox(BorderPassword);
+                }
+
             }
         }
 
@@ -186,7 +206,7 @@ namespace EMP_WPF_FR
             }
             catch (FormatException)
             {
-                MessageBox.Show("Поле Оклад должно быть числовым ");
+                MessageBox.Show("Поле оклад должно быть числовым ");
             }
         }
 

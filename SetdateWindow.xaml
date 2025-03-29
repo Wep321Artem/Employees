@@ -29,7 +29,7 @@
         </Grid.RowDefinitions>
 
 
-        <Label Content="Введите дату для рассчёта заработной платы" Style="{StaticResource Style_Hello}" Grid.Row="0"/>
+        <Label Content="Введите дату для расчёта заработной платы" Style="{StaticResource Style_Hello}" Grid.Row="0"/>
         <DatePicker x:Name="DateSalary" SelectedDateFormat="Short"  Margin="0,0,0,10" FontSize="18" Grid.Row="1" Width="250">
             <DatePicker.Resources>
                 <Style TargetType="DatePickerTextBox">

@@ -55,20 +55,13 @@ namespace EMP_WPF_FR
         public Info info = new Info();
 
        
-        //public DateTime SelectedDate { get; set; }
-        //public void SetSelectedDate(DateTime SelectedDate)
-        //{
-        //    this.SelectedDate = SelectedDate;
-        //}
 
         public double Salary { get; set;}
 
 
         public User() { }
 
-        //public User(DateTime? SelectedDate) { this.SelectedDate = SelectedDate ?? DateTime.Today; }\
-
-         
+      
         
 
         public User(string FIO, string Login, string Password)
@@ -102,20 +95,36 @@ namespace EMP_WPF_FR
 
 
         [NotMapped]
-        public static DateTime CurrentSelectedDate { get; private set; } = DateTime.Today;
+        public static DateTime CurrentSelectedDate { get; protected set; } = DateTime.Today;
 
         public static void SetCurrentSelectedDate(DateTime date)
         {
             CurrentSelectedDate = date;
         }
 
-       
+        public void LimitDate(string DateWork)
+        {
+            DateTime DateWorkInit = DateTime.ParseExact(DateWork, "dd.MM.yyyy", null);
+
+            if (CurrentSelectedDate < DateWorkInit)
+            {
+                
+                MessageBox.Show("Введённая вами дата некорректна по отношению к дате начала работы, дата установится в минимальное допустимое значение");
+                CurrentSelectedDate = DateWorkInit;
+
+
+            }
+        }
         public int years(string DateWork)
         {
             try
             {
                 DateTime DateWorkInit = DateTime.ParseExact(DateWork, "dd.MM.yyyy", null);
+                //int years = CurrentSelectedDate.Year - DateWorkInit.Year;
+
+                LimitDate(DateWork);
                 int years = CurrentSelectedDate.Year - DateWorkInit.Year;
+               
 
 
                 if (DateWorkInit > CurrentSelectedDate.AddYears(-years))
@@ -130,6 +139,9 @@ namespace EMP_WPF_FR
             
 
         }
+
+
+
 
 
         // Расчёт финальной зарплаты пользователя
@@ -177,24 +189,36 @@ namespace EMP_WPF_FR
         }
 
 
-        public string SalaryrequestForJun(string ExperiencePrecent, string LimExperiencePrecent, string SubordinatesSalariesPrecent = "0")
+        public string SalaryrequestForJun(string ExperiencePrecent, string LimExperiencePrecent, string limDate)
         {
+            DateTime DateWorkInit = DateTime.ParseExact(limDate, "dd.MM.yyyy", null);
 
+            if (CurrentSelectedDate < DateWorkInit)
+            {
+                //CurrentSelectedDate = DateWorkInit;
+                MessageBox.Show("Введённая вами дата некорректна по отношению к дате начала работы, дата установится в минимальное допустимое значение");
+                CurrentSelectedDate = DateWorkInit;
+            }
 
             string currentDateFormatted = CurrentSelectedDate.ToString("yyyy-MM-dd");
 
-
-
             string query1 = $@"CAST((julianday('{currentDateFormatted}') - julianday(
-                            substr(jun.DateWork, 7, 4) || '-' || substr(jun.DateWork, 4, 2) || '-' || substr(jun.DateWork, 1, 2))) / 365.25 AS INTEGER)";
-
-
+                    substr(jun.DateWork, 7, 4) || '-' || substr(jun.DateWork, 4, 2) || '-' || substr(jun.DateWork, 1, 2))) / 365.25 AS INTEGER)";
 
             string query2 = $@"CASE
-                               WHEN(jun.Salary + jun.Salary * {LimExperiencePrecent}) > ( jun.Salary + jun.Salary * ({ExperiencePrecent}*{query1}))  
-                               THEN (jun.Salary + jun.Salary * ({ExperiencePrecent}*{query1}))
-                               ELSE (jun.Salary + jun.Salary * {LimExperiencePrecent})
-                               END";
+                      WHEN julianday(substr(jun.DateWork, 7, 4) || '-' || 
+                           substr(jun.DateWork, 4, 2) || '-' || 
+                           substr(jun.DateWork, 1, 2)) > julianday('{currentDateFormatted}')
+                      THEN 0  
+                      ELSE (
+                          CASE
+                          WHEN (jun.Salary + jun.Salary * {LimExperiencePrecent}) > 
+                               (jun.Salary + jun.Salary * ({ExperiencePrecent}*{query1}))  
+                          THEN (jun.Salary + jun.Salary * ({ExperiencePrecent}*{query1}))
+                          ELSE (jun.Salary + jun.Salary * {LimExperiencePrecent})
+                          END
+                      )
+                      END";
 
             return query2;
         }
@@ -223,6 +247,7 @@ namespace EMP_WPF_FR
 
         public Employee(int EmployeeID, string FIO, string Login, string Password, string DateWork, double Salary, int JuniorManagerID) : base(FIO, Login, Password, DateWork, Salary)
         {
+
             this.JuniorManagerID = JuniorManagerID;
             this.EmployeeID = EmployeeID;
 
@@ -255,7 +280,7 @@ namespace EMP_WPF_FR
         public override double FinalSalary(double Salary, string DateWork) 
         {
 
-            string query = $"SELECT DISTINCT {SalaryrequestForJun("0.01", "0.35")} FROM JuniorSalesmans as jun WHERE jun.SeniorSalesmanID = {SeniorSalesmanID}";
+            string query = $"SELECT DISTINCT {SalaryrequestForJun("0.01", "0.35", DateWork)} FROM JuniorSalesmans as jun WHERE jun.SeniorSalesmanID = {SeniorSalesmanID}";
             double Result = base.resSalary(Salary, query, DateWork, 0.01, 0.35, 0.003);
             return Result;
 
@@ -263,7 +288,7 @@ namespace EMP_WPF_FR
 
         public override string FinalSalaryJun()
         {
-            string Result = base.SalaryrequestForJun("0.01", "0.35");
+            string Result = base.SalaryrequestForJun("0.01", "0.35", DateWork);
 
             return Result;
         }
@@ -317,46 +342,98 @@ namespace EMP_WPF_FR
 
         public override double FinalSalary(double Salary, string DateWork)
         {
-            // Запрос для получения конечных зарплат всех подчиненных JuniorManagers
+            DateTime DateWorkInit = DateTime.ParseExact(DateWork, "dd.MM.yyyy", null);
+            string currentDateFormatted = CurrentSelectedDate.ToString("yyyy-MM-dd");
+
+            string experienceCalc = $@"CAST((julianday('{currentDateFormatted}') - julianday(
+                            substr(jun.DateWork, 7, 4) || '-' || 
+                            substr(jun.DateWork, 4, 2) || '-' || 
+                            substr(jun.DateWork, 1, 2))) / 365.25 AS INTEGER)";
+
             string query = $@"
-            SELECT 
+    SELECT 
+        CASE
+            WHEN julianday(substr(jun.DateWork, 7, 4) || '-' || 
+                 substr(jun.DateWork, 4, 2) || '-' || 
+                 substr(jun.DateWork, 1, 2)) > julianday('{currentDateFormatted}')
+            THEN 0
+            ELSE (
                 CASE
-                    WHEN (jun.Salary + jun.Salary * 0.40) > (jun.Salary + jun.Salary * (0.05 * {JualyDay("jun")}))
-                    THEN (jun.Salary + jun.Salary * (0.05 * {JualyDay("jun")}))
+                    WHEN (jun.Salary + jun.Salary * 0.40) > (jun.Salary + jun.Salary * (0.05 * {experienceCalc}))
+                    THEN (jun.Salary + jun.Salary * (0.05 * {experienceCalc}))
                     ELSE (jun.Salary + jun.Salary * 0.40)
-                END +
-                (SELECT COALESCE(SUM(
+                END
+            )
+        END +
+        (SELECT COALESCE(SUM(
+            CASE
+                WHEN julianday(substr(emp.DateWork, 7, 4) || '-' || 
+                     substr(emp.DateWork, 4, 2) || '-' || 
+                     substr(emp.DateWork, 1, 2)) > julianday('{currentDateFormatted}')
+                THEN 0
+                ELSE (
                     CASE
                         WHEN (emp.Salary + emp.Salary * 0.30) > (emp.Salary + emp.Salary * (0.03 * {JualyDay("emp")}))
                         THEN (emp.Salary + emp.Salary * (0.03 * {JualyDay("emp")}))
                         ELSE (emp.Salary + emp.Salary * 0.30)
-                    END * 0.005), 0)
-                 FROM Employees emp 
-                 WHERE emp.JuniorManagerID = jun.JuniorManagerID)
-            FROM JuniorManagers jun 
-            WHERE jun.SeniorManagerID = {SeniorManagerID}";
+                    END * 0.005
+                )
+            END), 0)
+         FROM Employees emp 
+         WHERE emp.JuniorManagerID = jun.JuniorManagerID)
+    FROM JuniorManagers jun 
+    WHERE jun.SeniorManagerID = {SeniorManagerID}";
 
             double Result = base.resSalary(Salary, query, DateWork, 0.05, 0.40, 0.005);
             return Result;
         }
-
         public override string FinalSalaryJun()
         {
-            // Формула (Запрос) расчета конечной зарплаты для JuniorManagers (с учетом их подчиненных)
+            DateTime DateWorkInit = DateTime.ParseExact(DateWork, "dd.MM.yyyy", null);
+
+            if (CurrentSelectedDate < DateWorkInit)
+            {
+                User.SetCurrentSelectedDate(DateWorkInit);
+                MessageBox.Show("Введённая вами дата некорректна по отношению к дате начала работы, дата установится в минимальное допустимое значение");
+            }
+
+            string currentDateFormatted = CurrentSelectedDate.ToString("yyyy-MM-dd");
+
+            string experienceCalc = $@"CAST((julianday('{currentDateFormatted}') - julianday(
+                        substr(jun.DateWork, 7, 4) || '-' || 
+                        substr(jun.DateWork, 4, 2) || '-' || 
+                        substr(jun.DateWork, 1, 2))) / 365.25 AS INTEGER)";
+
             return $@"
+CASE
+    WHEN julianday(substr(jun.DateWork, 7, 4) || '-' || 
+         substr(jun.DateWork, 4, 2) || '-' || 
+         substr(jun.DateWork, 1, 2)) > julianday('{currentDateFormatted}')
+    THEN 0
+    ELSE (
+        CASE
+            WHEN (jun.Salary + jun.Salary * 0.40) > (jun.Salary + jun.Salary * (0.05 * {experienceCalc}))
+            THEN (jun.Salary + jun.Salary * (0.05 * {experienceCalc}))
+            ELSE (jun.Salary + jun.Salary * 0.40)
+        END
+    )
+END +
+(SELECT COALESCE(SUM(
+    CASE
+        WHEN julianday(substr(emp.DateWork, 7, 4) || '-' || 
+             substr(emp.DateWork, 4, 2) || '-' || 
+             substr(emp.DateWork, 1, 2)) > julianday('{currentDateFormatted}')
+        THEN 0
+        ELSE (
             CASE
-                WHEN (jun.Salary + jun.Salary * 0.40) > (jun.Salary + jun.Salary * (0.05 * {JualyDay("jun")}))
-                THEN (jun.Salary + jun.Salary * (0.05 * {JualyDay("jun")}))
-                ELSE (jun.Salary + jun.Salary * 0.40)
-            END +
-            (SELECT COALESCE(SUM(
-                CASE
-                    WHEN (emp.Salary + emp.Salary * 0.30) > (emp.Salary + emp.Salary * (0.03 * {JualyDay("emp")}))
-                    THEN (emp.Salary + emp.Salary * (0.03 * {JualyDay("emp")}))
-                    ELSE (emp.Salary + emp.Salary * 0.30)
-                END * 0.005), 0)
-             FROM Employees emp 
-             WHERE emp.JuniorManagerID = jun.JuniorManagerID)";
+                WHEN (emp.Salary + emp.Salary * 0.30) > (emp.Salary + emp.Salary * (0.03 * {JualyDay("emp")}))
+                THEN (emp.Salary + emp.Salary * (0.03 * {JualyDay("emp")}))
+                ELSE (emp.Salary + emp.Salary * 0.30)
+            END * 0.005
+        )
+    END), 0)
+ FROM Employees emp 
+ WHERE emp.JuniorManagerID = jun.JuniorManagerID)";
         }
     }
 
@@ -382,15 +459,15 @@ namespace EMP_WPF_FR
         public override double FinalSalary(double Salary, string DateWork) 
         {
 
-            string query = $@"SELECT {base.SalaryrequestForJun("0.03", "0.30")} FROM Employees as jun Where jun.JuniorManagerID = {JuniorManagerID}";
+            string query = $@"SELECT {base.SalaryrequestForJun("0.03", "0.30", DateWork)} FROM Employees as jun Where jun.JuniorManagerID = {JuniorManagerID}";
 
             double Result = base.resSalary(Salary, query, DateWork, 0.05, 0.4, 0.005);
             return Result;
         }
         public override string FinalSalaryJun()
         {
-            string query = $@"(SELECT {base.SalaryrequestForJun("0.03", "0.30")} FROM Employees)";
-            return base.SalaryrequestForJun("0.03", "0.30");
+            string query = $@"(SELECT {base.SalaryrequestForJun("0.03", "0.30", DateWork)} FROM Employees)";
+            return base.SalaryrequestForJun("0.03", "0.30", DateWork);
         }
 
     }

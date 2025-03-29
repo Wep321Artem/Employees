@@ -40,6 +40,8 @@ namespace EMP_WPF_FR
         public SeniorManager Senmanage = null;
         public JuniorManager Junmanage = null;
 
+        public MainWindow LogPass = new MainWindow();
+
         SetdateWindow SetDate;
 
         public Login(TextBox BoxLogin, PasswordBox BoxPassword, SetdateWindow SetDate, DateTime? SelectedDate)
@@ -64,29 +66,16 @@ namespace EMP_WPF_FR
         }
         public void Check_input()
         {
-            Border parentBorderLogin = BoxLogin.Parent as Border;
-            Border parentBorderPassword = BoxPassword.Parent as Border;
 
-            if (login.Length < 5) { MarkInvalid(parentBorderLogin, parentBorderPassword); }
-            if (password.Length < 5) { MarkInvalid(parentBorderLogin, parentBorderPassword); }
-
-            else
-            {
-                parentBorderPassword.Background = Brushes.Transparent;
-                parentBorderLogin.Background = Brushes.Transparent;
-                SetData();
-            }
+            if (login.Length < 5 || password.Length < 5) { MarkInvalid();}
+            else { SetData(); }
 
         }
 
-        public void MarkInvalid(Border parentBorderLogin, Border parentBorderPassword)
+        public void MarkInvalid()
         {
-            string message = "Логин и пароль должен содержать более 5-ти символов";
-            BoxPassword.ToolTip = message;
-            BoxLogin.ToolTip = message;
-            parentBorderLogin.Background = Brushes.Pink;
-            parentBorderPassword.Background = Brushes.Pink;
-
+            MessageBox.Show("Логин и пароль должен содержать более 5-ти символов");
+            LogPass.Show();
         }
 
         public string queryForSuperUser(string table)
@@ -118,7 +107,7 @@ namespace EMP_WPF_FR
                         
                         info_w.Hello.Content = "Добро пожаловать, " + el_user.FIO;
                         el_user.Salary = FinalSalaryData(el_user);
-                        info_w.Salary.Content = el_user.Salary;
+                        info_w.Salary.Content = Math.Round(el_user.Salary, 2);
                         info_w.FIO.Content = el_user.FIO;
                         info_w.Main.Children.Remove(info_w.AddUser);
 
@@ -196,7 +185,7 @@ namespace EMP_WPF_FR
                 }
 
             }
-            if (!verification) { MessageBox.Show("Пароль или логин введены неверно"); }
+            if (!verification) { MessageBox.Show("Пароль или логин введены неверно"); LogPass.Show(); }
 
         }
 
@@ -229,7 +218,7 @@ namespace EMP_WPF_FR
                     connection.Open();
                     using (var reader = command.ExecuteReader()) // чтение данных
                     {
-                        // Создаем DataTable для хранения данных
+                        // DataTable для хранения данных
                         var dataTable = new DataTable();
                         dataTable.Load(reader);
                         // Привязываем DataTable к DataGrid
@@ -265,7 +254,7 @@ namespace EMP_WPF_FR
         }
         public string[] SetColumn(List<object> Users)
         {
-            // Создаем список для хранения имен первых столбцов
+            //список для хранения имен первых столбцов
             List<string> firstColumnNamesAndReq = new List<string>();
             var sen_and_jun = new Dictionary<string, string>()
             {
@@ -315,14 +304,14 @@ namespace EMP_WPF_FR
 
                 }
             }
-            // Возвращаем массив имен первых столбцов
+            // массив имен первых столбцов
             return firstColumnNamesAndReq.ToArray();
             
         }
 
         public static string GetTableName(Type type)
         {
-            // Возвращаем имя класса во множественном числе
+            // имя класса во множественном числе
             return type.Name + "s"; 
         }
 

@@ -18,8 +18,12 @@ namespace EMP_WPF_FR
 
     public partial class MainWindow : Window
     {
-        ApplicationContext db;
+       
         private SetdateWindow newWind;
+        SuperUser super = null;
+        ApplicationContext db = new ApplicationContext();
+        public string login = "";
+        public string password = "";
 
         public MainWindow()
         {
@@ -28,10 +32,23 @@ namespace EMP_WPF_FR
 
         public void Next(object sender, RoutedEventArgs e)
         {
-            // Предполагаем, что Login и Password — это свойства или поля этого окна,
-            // содержащие учетные данные пользователя
+
             newWind = new SetdateWindow(this.Login, this.Password, this);
-            newWind.Show();
+            login = Login.Text.Trim();
+            password = Password.Password.Trim();
+            super = db.SuperUsers.Where(log => log.Login == login && log.Password == password).FirstOrDefault();
+
+           
+            if (super!=null)
+            {
+                DateTime Today = DateTime.Today;
+                Login login = new Login(Login, Password, newWind, Today);
+
+            }
+            else { newWind.Show(); }
+              
+
+
             this.Close();
         }
     }

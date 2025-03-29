@@ -87,7 +87,7 @@
 
         <StackPanel Style="{StaticResource Box}" Grid.Column="0" Grid.Row="2">
             <Label Content="Оклад" Margin="12,0,0,0" Style="{StaticResource Text}"/>
-            <Border CornerRadius="20" Background="#AFB2B8" BorderBrush="#0DA4CA" BorderThickness="1" Width="372">
+            <Border x:Name="BorderSalary"  CornerRadius="20" Background="#AFB2B8" BorderBrush="#0DA4CA" BorderThickness="1" Width="372">
                 <TextBox x:Name="Salary" Style ="{StaticResource StyleLogin}" BorderThickness="0" Background="Transparent" HorizontalAlignment="Center" />
             </Border>
         </StackPanel>
@@ -101,7 +101,7 @@
 
         <StackPanel Style="{StaticResource Box}" Grid.Column="1" Grid.Row="1">
             <Label Content="Пароль" Margin="12,0,0,0" Style="{StaticResource Text}"/>
-            <Border CornerRadius="20" Background="#AFB2B8" BorderBrush="#0DA4CA" BorderThickness="1" Width="372">
+            <Border  x:Name="BorderPassword" CornerRadius="20" Background="#AFB2B8" BorderBrush="#0DA4CA" BorderThickness="1" Width="372">
                 <TextBox x:Name="Password" Style ="{StaticResource StyleLogin}" BorderThickness="0" Background="Transparent" HorizontalAlignment="Center" />
             </Border>
         </StackPanel>
