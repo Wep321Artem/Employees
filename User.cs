@@ -351,7 +351,7 @@ namespace EMP_WPF_FR
                             substr(jun.DateWork, 1, 2))) / 365.25 AS INTEGER)";
 
             string query = $@"
-    SELECT 
+        SELECT 
         CASE
             WHEN julianday(substr(jun.DateWork, 7, 4) || '-' || 
                  substr(jun.DateWork, 4, 2) || '-' || 
@@ -376,13 +376,12 @@ namespace EMP_WPF_FR
                         WHEN (emp.Salary + emp.Salary * 0.30) > (emp.Salary + emp.Salary * (0.03 * {JualyDay("emp")}))
                         THEN (emp.Salary + emp.Salary * (0.03 * {JualyDay("emp")}))
                         ELSE (emp.Salary + emp.Salary * 0.30)
-                    END * 0.005
-                )
+                    END * 0.005)
             END), 0)
-         FROM Employees emp 
-         WHERE emp.JuniorManagerID = jun.JuniorManagerID)
-    FROM JuniorManagers jun 
-    WHERE jun.SeniorManagerID = {SeniorManagerID}";
+        FROM Employees emp 
+        WHERE emp.JuniorManagerID = jun.JuniorManagerID)
+        FROM JuniorManagers jun 
+        WHERE jun.SeniorManagerID = {SeniorManagerID}";
 
             double Result = base.resSalary(Salary, query, DateWork, 0.05, 0.40, 0.005);
             return Result;
@@ -405,21 +404,21 @@ namespace EMP_WPF_FR
                         substr(jun.DateWork, 1, 2))) / 365.25 AS INTEGER)";
 
             return $@"
-CASE
-    WHEN julianday(substr(jun.DateWork, 7, 4) || '-' || 
+        CASE
+        WHEN julianday(substr(jun.DateWork, 7, 4) || '-' || 
          substr(jun.DateWork, 4, 2) || '-' || 
          substr(jun.DateWork, 1, 2)) > julianday('{currentDateFormatted}')
-    THEN 0
-    ELSE (
+         THEN 0
+        ELSE (
         CASE
             WHEN (jun.Salary + jun.Salary * 0.40) > (jun.Salary + jun.Salary * (0.05 * {experienceCalc}))
             THEN (jun.Salary + jun.Salary * (0.05 * {experienceCalc}))
             ELSE (jun.Salary + jun.Salary * 0.40)
-        END
-    )
-END +
-(SELECT COALESCE(SUM(
-    CASE
+        END)
+    
+        END +
+        (SELECT COALESCE(SUM(
+         CASE
         WHEN julianday(substr(emp.DateWork, 7, 4) || '-' || 
              substr(emp.DateWork, 4, 2) || '-' || 
              substr(emp.DateWork, 1, 2)) > julianday('{currentDateFormatted}')
@@ -429,11 +428,11 @@ END +
                 WHEN (emp.Salary + emp.Salary * 0.30) > (emp.Salary + emp.Salary * (0.03 * {JualyDay("emp")}))
                 THEN (emp.Salary + emp.Salary * (0.03 * {JualyDay("emp")}))
                 ELSE (emp.Salary + emp.Salary * 0.30)
-            END * 0.005
-        )
-    END), 0)
- FROM Employees emp 
- WHERE emp.JuniorManagerID = jun.JuniorManagerID)";
+            END * 0.005)
+        
+         END), 0)
+         FROM Employees emp 
+         WHERE emp.JuniorManagerID = jun.JuniorManagerID)";
         }
     }
 

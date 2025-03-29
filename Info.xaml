@@ -85,14 +85,6 @@
 
                     <DataGrid x:Name="JuniorDataGrid" Style="{StaticResource Data}" AutoGenerateColumns="True"  Grid.Row="1" Grid.Column="0" Grid.RowSpan="2" IsReadOnly="True" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto" Height="250px"/>
 
-                    <!--IsReadOnly="True"
-                              CanUserAddRows="False"
-                              CanUserDeleteRows="False"
-                              CanUserReorderColumns="False"/>-->
-
-
-
-
                 </Grid>
 
             </Border>

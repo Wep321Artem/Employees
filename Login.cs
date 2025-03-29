@@ -30,7 +30,6 @@ namespace EMP_WPF_FR
 
         ApplicationContext db = new ApplicationContext();
 
-       // public User user = new User();
 
         public Employee Empl = null;
         public SuperUser SupUser = null;
@@ -244,12 +243,7 @@ namespace EMP_WPF_FR
                                    FROM {Column_table[2]} AS jun
                                    INNER JOIN {Column_table[1]} sen ON jun.{Column_table[0]} = {Column_table[3]}";
 
-
             SetDataTable(query);
-            
-            SetDataGrid();
-
-
 
         }
         public string[] SetColumn(List<object> Users)
@@ -347,31 +341,7 @@ namespace EMP_WPF_FR
 
         }
 
-        public double SetDataGrid() 
-        {
-            string column = "Оклад"; 
-            List<string> columnData = new List<string>();
 
-            
-            foreach (var item in info_w.JuniorDataGrid.Items)
-            {
-               
-                if (item is DataRowView rowView)
-                {
-                   
-                    var value = rowView[column]?.ToString();
-
-                    if (value != null)
-                    {
-                        columnData.Add(value);
-                    }
-                }
-            }
-
-            
-            string result = string.Join(", ", columnData);
-            return 0.0;
-        }
 
        
 

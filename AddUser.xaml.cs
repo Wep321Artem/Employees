@@ -139,7 +139,7 @@ namespace EMP_WPF_FR
             };
 
             string connectionString = $"Data Source=Users.db";
-            string queryValuColumn = $@"SELECT {GetLastColimnName(TableName)} FROM {jun_and_sen[TableName]} WHERE FIO = '{selectedValue}'"; //{selectedValue}";
+            string queryValuColumn = $@"SELECT {GetLastColimnName(TableName)} FROM {jun_and_sen[TableName]} WHERE FIO = '{selectedValue}'"; 
 
             using (SQLiteConnection connection = new SQLiteConnection(connectionString))
             {
