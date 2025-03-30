@@ -109,7 +109,7 @@ namespace EMP_WPF_FR
             if (CurrentSelectedDate < DateWorkInit)
             {
                 
-                MessageBox.Show("Введённая вами дата некорректна по отношению к дате начала работы, дата установится в минимальное допустимое значение");
+                MessageBox.Show("Введённая вами дата некорректна по отношению к дате начала работы, дата установится в минимальное допустимое значение (Ваша дата начала работы)");
                 CurrentSelectedDate = DateWorkInit;
 
 
@@ -120,7 +120,7 @@ namespace EMP_WPF_FR
             try
             {
                 DateTime DateWorkInit = DateTime.ParseExact(DateWork, "dd.MM.yyyy", null);
-                //int years = CurrentSelectedDate.Year - DateWorkInit.Year;
+             
 
                 LimitDate(DateWork);
                 int years = CurrentSelectedDate.Year - DateWorkInit.Year;
@@ -139,9 +139,6 @@ namespace EMP_WPF_FR
             
 
         }
-
-
-
 
 
         // Расчёт финальной зарплаты пользователя
@@ -191,14 +188,7 @@ namespace EMP_WPF_FR
 
         public string SalaryrequestForJun(string ExperiencePrecent, string LimExperiencePrecent, string limDate)
         {
-            DateTime DateWorkInit = DateTime.ParseExact(limDate, "dd.MM.yyyy", null);
-
-            if (CurrentSelectedDate < DateWorkInit)
-            {
-                //CurrentSelectedDate = DateWorkInit;
-                MessageBox.Show("Введённая вами дата некорректна по отношению к дате начала работы, дата установится в минимальное допустимое значение");
-                CurrentSelectedDate = DateWorkInit;
-            }
+            LimitDate(DateWork);
 
             string currentDateFormatted = CurrentSelectedDate.ToString("yyyy-MM-dd");
 
@@ -342,8 +332,12 @@ namespace EMP_WPF_FR
 
         public override double FinalSalary(double Salary, string DateWork)
         {
-            DateTime DateWorkInit = DateTime.ParseExact(DateWork, "dd.MM.yyyy", null);
+
+            LimitDate(DateWork);
+
             string currentDateFormatted = CurrentSelectedDate.ToString("yyyy-MM-dd");
+
+
 
             string experienceCalc = $@"CAST((julianday('{currentDateFormatted}') - julianday(
                             substr(jun.DateWork, 7, 4) || '-' || 
@@ -356,7 +350,7 @@ namespace EMP_WPF_FR
             WHEN julianday(substr(jun.DateWork, 7, 4) || '-' || 
                  substr(jun.DateWork, 4, 2) || '-' || 
                  substr(jun.DateWork, 1, 2)) > julianday('{currentDateFormatted}')
-            THEN SUM({FinalSalaryJun()})
+            THEN 0
             ELSE (
                 CASE
                     WHEN (jun.Salary + jun.Salary * 0.40) > (jun.Salary + jun.Salary * (0.05 * {experienceCalc}))
@@ -388,13 +382,7 @@ namespace EMP_WPF_FR
         }
         public override string FinalSalaryJun()
         {
-            DateTime DateWorkInit = DateTime.ParseExact(DateWork, "dd.MM.yyyy", null);
-
-            if (CurrentSelectedDate < DateWorkInit)
-            {
-                User.SetCurrentSelectedDate(DateWorkInit);
-                MessageBox.Show("Введённая вами дата некорректна по отношению к дате начала работы, дата установится в минимальное допустимое значение");
-            }
+            LimitDate(DateWork);
 
             string currentDateFormatted = CurrentSelectedDate.ToString("yyyy-MM-dd");
 
