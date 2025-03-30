@@ -356,7 +356,7 @@ namespace EMP_WPF_FR
             WHEN julianday(substr(jun.DateWork, 7, 4) || '-' || 
                  substr(jun.DateWork, 4, 2) || '-' || 
                  substr(jun.DateWork, 1, 2)) > julianday('{currentDateFormatted}')
-            THEN 0
+            THEN SUM({FinalSalaryJun()})
             ELSE (
                 CASE
                     WHEN (jun.Salary + jun.Salary * 0.40) > (jun.Salary + jun.Salary * (0.05 * {experienceCalc}))

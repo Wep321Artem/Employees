@@ -3,56 +3,12 @@
   "WorkspaceRootPath": "D:\\C# project\\Employees\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3ECC2B0B-AF0F-4710-A1CC-BCD31330FE14}|EMP_WPF_FR.csproj|d:\\c# project\\employees\\setdatewindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3ECC2B0B-AF0F-4710-A1CC-BCD31330FE14}|EMP_WPF_FR.csproj|solutionrelative:setdatewindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{3ECC2B0B-AF0F-4710-A1CC-BCD31330FE14}|EMP_WPF_FR.csproj|D:\\C# project\\Employees\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3ECC2B0B-AF0F-4710-A1CC-BCD31330FE14}|EMP_WPF_FR.csproj|solutionrelative:user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3ECC2B0B-AF0F-4710-A1CC-BCD31330FE14}|EMP_WPF_FR.csproj|D:\\C# project\\Employees\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3ECC2B0B-AF0F-4710-A1CC-BCD31330FE14}|EMP_WPF_FR.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3ECC2B0B-AF0F-4710-A1CC-BCD31330FE14}|EMP_WPF_FR.csproj|D:\\C# project\\Employees\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{3ECC2B0B-AF0F-4710-A1CC-BCD31330FE14}|EMP_WPF_FR.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3ECC2B0B-AF0F-4710-A1CC-BCD31330FE14}|EMP_WPF_FR.csproj|D:\\C# project\\Employees\\info.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3ECC2B0B-AF0F-4710-A1CC-BCD31330FE14}|EMP_WPF_FR.csproj|solutionrelative:info.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3ECC2B0B-AF0F-4710-A1CC-BCD31330FE14}|EMP_WPF_FR.csproj|D:\\C# project\\Employees\\info.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{3ECC2B0B-AF0F-4710-A1CC-BCD31330FE14}|EMP_WPF_FR.csproj|solutionrelative:info.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3ECC2B0B-AF0F-4710-A1CC-BCD31330FE14}|EMP_WPF_FR.csproj|D:\\C# project\\Employees\\adduser.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{3ECC2B0B-AF0F-4710-A1CC-BCD31330FE14}|EMP_WPF_FR.csproj|solutionrelative:adduser.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3ECC2B0B-AF0F-4710-A1CC-BCD31330FE14}|EMP_WPF_FR.csproj|D:\\C# project\\Employees\\setdatewindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{3ECC2B0B-AF0F-4710-A1CC-BCD31330FE14}|EMP_WPF_FR.csproj|solutionrelative:setdatewindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{3ECC2B0B-AF0F-4710-A1CC-BCD31330FE14}|EMP_WPF_FR.csproj|D:\\C# project\\Employees\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3ECC2B0B-AF0F-4710-A1CC-BCD31330FE14}|EMP_WPF_FR.csproj|solutionrelative:login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3ECC2B0B-AF0F-4710-A1CC-BCD31330FE14}|EMP_WPF_FR.csproj|D:\\C# project\\Employees\\adduser.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3ECC2B0B-AF0F-4710-A1CC-BCD31330FE14}|EMP_WPF_FR.csproj|solutionrelative:adduser.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3ECC2B0B-AF0F-4710-A1CC-BCD31330FE14}|EMP_WPF_FR.csproj|D:\\C# project\\Employees\\applicationcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3ECC2B0B-AF0F-4710-A1CC-BCD31330FE14}|EMP_WPF_FR.csproj|solutionrelative:applicationcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3ECC2B0B-AF0F-4710-A1CC-BCD31330FE14}|EMP_WPF_FR.csproj|D:\\C# project\\Employees\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3ECC2B0B-AF0F-4710-A1CC-BCD31330FE14}|EMP_WPF_FR.csproj|solutionrelative:app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3ECC2B0B-AF0F-4710-A1CC-BCD31330FE14}|EMP_WPF_FR.csproj|D:\\C# project\\Employees\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{3ECC2B0B-AF0F-4710-A1CC-BCD31330FE14}|EMP_WPF_FR.csproj|solutionrelative:app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -62,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -70,155 +26,29 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Info.xaml.cs",
-              "DocumentMoniker": "D:\\C# project\\Employees\\Info.xaml.cs",
-              "RelativeDocumentMoniker": "Info.xaml.cs",
-              "ToolTip": "D:\\C# project\\Employees\\Info.xaml.cs",
-              "RelativeToolTip": "Info.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-29T21:33:53.77Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Info.xaml",
-              "DocumentMoniker": "D:\\C# project\\Employees\\Info.xaml",
-              "RelativeDocumentMoniker": "Info.xaml",
-              "ToolTip": "D:\\C# project\\Employees\\Info.xaml",
-              "RelativeToolTip": "Info.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-03-29T10:26:58.683Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "App.xaml.cs",
-              "DocumentMoniker": "D:\\C# project\\Employees\\App.xaml.cs",
-              "RelativeDocumentMoniker": "App.xaml.cs",
-              "ToolTip": "D:\\C# project\\Employees\\App.xaml.cs",
-              "RelativeToolTip": "App.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-29T10:16:56.853Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "App.xaml",
-              "DocumentMoniker": "D:\\C# project\\Employees\\App.xaml",
-              "RelativeDocumentMoniker": "App.xaml",
-              "ToolTip": "D:\\C# project\\Employees\\App.xaml",
-              "RelativeToolTip": "App.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-03-29T10:16:55.082Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AddUser.xaml",
-              "DocumentMoniker": "D:\\C# project\\Employees\\AddUser.xaml",
-              "RelativeDocumentMoniker": "AddUser.xaml",
-              "ToolTip": "D:\\C# project\\Employees\\AddUser.xaml",
-              "RelativeToolTip": "AddUser.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-03-29T10:05:07.89Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "ApplicationContext.cs",
-              "DocumentMoniker": "D:\\C# project\\Employees\\ApplicationContext.cs",
-              "RelativeDocumentMoniker": "ApplicationContext.cs",
-              "ToolTip": "D:\\C# project\\Employees\\ApplicationContext.cs",
-              "RelativeToolTip": "ApplicationContext.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAmwBgAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-28T12:55:13.572Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "D:\\C# project\\Employees\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "MainWindow.xaml.cs",
-              "ToolTip": "D:\\C# project\\Employees\\MainWindow.xaml.cs",
-              "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-28T12:30:27.339Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "SetdateWindow.xaml.cs",
-              "DocumentMoniker": "D:\\C# project\\Employees\\SetdateWindow.xaml.cs",
-              "RelativeDocumentMoniker": "SetdateWindow.xaml.cs",
-              "ToolTip": "D:\\C# project\\Employees\\SetdateWindow.xaml.cs*",
-              "RelativeToolTip": "SetdateWindow.xaml.cs*",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAUwCoAAABeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-28T12:24:53.507Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "AddUser.xaml.cs",
-              "DocumentMoniker": "D:\\C# project\\Employees\\AddUser.xaml.cs",
-              "RelativeDocumentMoniker": "AddUser.xaml.cs",
-              "ToolTip": "D:\\C# project\\Employees\\AddUser.xaml.cs",
-              "RelativeToolTip": "AddUser.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAI0AAACMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-28T09:26:37.852Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 1,
               "Title": "Login.cs",
               "DocumentMoniker": "D:\\C# project\\Employees\\Login.cs",
               "RelativeDocumentMoniker": "Login.cs",
               "ToolTip": "D:\\C# project\\Employees\\Login.cs",
               "RelativeToolTip": "Login.cs",
-              "ViewState": "AgIAADMBAAAAAAAAAAAhwEcBAAAqAAAAAAAAAA==",
+              "ViewState": "AgIAANIAAAAAAAAAAAAcwMgAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-28T08:50:39.598Z"
+              "WhenOpened": "2025-03-28T08:50:39.598Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "User.cs",
               "DocumentMoniker": "D:\\C# project\\Employees\\User.cs",
               "RelativeDocumentMoniker": "User.cs",
-              "ToolTip": "D:\\C# project\\Employees\\User.cs",
-              "RelativeToolTip": "User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGMBAABAAAAAAAAAAA==",
+              "ToolTip": "D:\\C# project\\Employees\\User.cs*",
+              "RelativeToolTip": "User.cs*",
+              "ViewState": "AgIAAFQBAAAAAAAAAAAgwGYBAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-28T00:59:23.065Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "D:\\C# project\\Employees\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "MainWindow.xaml",
-              "ToolTip": "D:\\C# project\\Employees\\MainWindow.xaml",
-              "RelativeToolTip": "MainWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-03-28T00:56:25.35Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "SetdateWindow.xaml",
-              "DocumentMoniker": "D:\\C# project\\Employees\\SetdateWindow.xaml",
-              "RelativeDocumentMoniker": "SetdateWindow.xaml",
-              "ToolTip": "D:\\C# project\\Employees\\SetdateWindow.xaml",
-              "RelativeToolTip": "SetdateWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-03-27T21:40:29.097Z"
+              "WhenOpened": "2025-03-28T00:59:23.065Z",
+              "EditorCaption": ""
             }
           ]
         }
