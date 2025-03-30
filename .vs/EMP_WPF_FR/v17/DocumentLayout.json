@@ -3,7 +3,7 @@
   "WorkspaceRootPath": "D:\\C# project\\Employees\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3ECC2B0B-AF0F-4710-A1CC-BCD31330FE14}|EMP_WPF_FR.csproj|D:\\C# project\\Employees\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3ECC2B0B-AF0F-4710-A1CC-BCD31330FE14}|EMP_WPF_FR.csproj|d:\\c# project\\employees\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3ECC2B0B-AF0F-4710-A1CC-BCD31330FE14}|EMP_WPF_FR.csproj|solutionrelative:user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -34,8 +34,7 @@
               "RelativeToolTip": "Login.cs",
               "ViewState": "AgIAANIAAAAAAAAAAAAcwMgAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-28T08:50:39.598Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-28T08:50:39.598Z"
             },
             {
               "$type": "Document",
@@ -45,7 +44,7 @@
               "RelativeDocumentMoniker": "User.cs",
               "ToolTip": "D:\\C# project\\Employees\\User.cs",
               "RelativeToolTip": "User.cs",
-              "ViewState": "AgIAAFQBAAAAAAAAAAAgwGMBAABAAAAAAAAAAA==",
+              "ViewState": "AgIAAFkBAAAAAAAAAAAkwGMBAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-28T00:59:23.065Z",
               "EditorCaption": ""
