@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "D:\\C# project\\Employees\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{3ECC2B0B-AF0F-4710-A1CC-BCD31330FE14}|EMP_WPF_FR.csproj|D:\\C# project\\Employees\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3ECC2B0B-AF0F-4710-A1CC-BCD31330FE14}|EMP_WPF_FR.csproj|solutionrelative:login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{3ECC2B0B-AF0F-4710-A1CC-BCD31330FE14}|EMP_WPF_FR.csproj|d:\\c# project\\employees\\adduser.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3ECC2B0B-AF0F-4710-A1CC-BCD31330FE14}|EMP_WPF_FR.csproj|solutionrelative:adduser.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3ECC2B0B-AF0F-4710-A1CC-BCD31330FE14}|EMP_WPF_FR.csproj|d:\\c# project\\employees\\applicationcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3ECC2B0B-AF0F-4710-A1CC-BCD31330FE14}|EMP_WPF_FR.csproj|D:\\C# project\\Employees\\applicationcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3ECC2B0B-AF0F-4710-A1CC-BCD31330FE14}|EMP_WPF_FR.csproj|solutionrelative:applicationcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3ECC2B0B-AF0F-4710-A1CC-BCD31330FE14}|EMP_WPF_FR.csproj|D:\\C# project\\Employees\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3ECC2B0B-AF0F-4710-A1CC-BCD31330FE14}|EMP_WPF_FR.csproj|solutionrelative:user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3ECC2B0B-AF0F-4710-A1CC-BCD31330FE14}|EMP_WPF_FR.csproj|D:\\C# project\\Employees\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3ECC2B0B-AF0F-4710-A1CC-BCD31330FE14}|EMP_WPF_FR.csproj|solutionrelative:login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,12 +34,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "ApplicationContext.cs",
               "DocumentMoniker": "D:\\C# project\\Employees\\ApplicationContext.cs",
               "RelativeDocumentMoniker": "ApplicationContext.cs",
-              "ToolTip": "D:\\C# project\\Employees\\ApplicationContext.cs*",
-              "RelativeToolTip": "ApplicationContext.cs*",
+              "ToolTip": "D:\\C# project\\Employees\\ApplicationContext.cs",
+              "RelativeToolTip": "ApplicationContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-01T18:00:38.919Z",
@@ -47,42 +47,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "AddUser.xaml.cs",
               "DocumentMoniker": "D:\\C# project\\Employees\\AddUser.xaml.cs",
               "RelativeDocumentMoniker": "AddUser.xaml.cs",
-              "ToolTip": "D:\\C# project\\Employees\\AddUser.xaml.cs*",
-              "RelativeToolTip": "AddUser.xaml.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAbAAAAAAAAAA==",
+              "ToolTip": "D:\\C# project\\Employees\\AddUser.xaml.cs",
+              "RelativeToolTip": "AddUser.xaml.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwAYAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-31T10:57:07.457Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "Login.cs",
               "DocumentMoniker": "D:\\C# project\\Employees\\Login.cs",
               "RelativeDocumentMoniker": "Login.cs",
-              "ToolTip": "D:\\C# project\\Employees\\Login.cs*",
-              "RelativeToolTip": "Login.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAZAAAAAAAAAA==",
+              "ToolTip": "D:\\C# project\\Employees\\Login.cs",
+              "RelativeToolTip": "Login.cs",
+              "ViewState": "AgIAAPQAAAAAAAAAAIAwwBIBAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-28T08:50:39.598Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "User.cs",
               "DocumentMoniker": "D:\\C# project\\Employees\\User.cs",
               "RelativeDocumentMoniker": "User.cs",
-              "ToolTip": "D:\\C# project\\Employees\\User.cs*",
-              "RelativeToolTip": "User.cs*",
+              "ToolTip": "D:\\C# project\\Employees\\User.cs",
+              "RelativeToolTip": "User.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-28T00:59:23.065Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-28T00:59:23.065Z"
             }
           ]
         }

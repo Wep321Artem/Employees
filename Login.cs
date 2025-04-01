@@ -79,7 +79,7 @@ namespace EMP_WPF_FR
         {
 
             List<object> Users_all = new List<object> { Empl, Senmanage, Sensale, JunSale, Junmanage, SupUser };
-            List<object> Users_sun = new List<object> { Senmanage, Sensale, Junmanage }; 
+            List<object> Users_sin = new List<object> { Senmanage, Sensale, Junmanage }; 
 
             bool verification = false;
 
@@ -107,7 +107,7 @@ namespace EMP_WPF_FR
 
                         if (el_user == Senmanage || el_user == Sensale || el_user == Junmanage)
                         {
-                            string[] Column_table = SetColumn(Users_sun);
+                            string[] Column_table = SetColumnForQuery(el_user);
                             queryRorSen(Column_table);
 
                         }
@@ -181,21 +181,21 @@ namespace EMP_WPF_FR
 
         public double FinalSalaryData(User el_user)
         {
-            List<User> Users_all = new List<User> { Empl, Senmanage, Sensale, JunSale, Junmanage };
-            
-            for(int i =0; i< Users_all.Count; i++)
+            try
             {
-                if (Users_all[i] != null)
-                {
-                    double FinalSalaryvalue = Users_all[i].FinalSalary(el_user.Salary, el_user.DateWork);
-                    return FinalSalaryvalue;
-                   
-                }
+                double FinalSalaryvalue = el_user.FinalSalary(el_user.Salary, el_user.DateWork);
+                return FinalSalaryvalue;
+
+            }
+            catch (ArgumentNullException)
+            {
+                MessageBox.Show("Пользователь не найден");
+                return 0.0;
             }
 
-            return 0.0;  
+
         }
-        
+
 
         public void SetDataTable(string query)
         {
@@ -236,7 +236,7 @@ namespace EMP_WPF_FR
             SetDataTable(query);
 
         }
-        public string[] SetColumn(List<object> Users)
+        public string[] SetColumnForQuery(User el)
         {
             //список для хранения имен первых столбцов
             List<string> firstColumnNamesAndReq = new List<string>();
@@ -248,56 +248,34 @@ namespace EMP_WPF_FR
 
             };
 
+            var type = el.GetType();
 
-            foreach (var el in Users)
+
+            var firstColumnName = type.GetProperties().First().Name;
+            string tableName_sen = type.Name + "s";
+            var ID = GetIDValue(el);
+
+
+            firstColumnNamesAndReq.Add(firstColumnName);
+            firstColumnNamesAndReq.Add(tableName_sen);
+
+
+            foreach (var person in sen_and_jun)
             {
-                if (el != null)
+                if (person.Key == tableName_sen)
                 {
-                   
-                    var type = el.GetType();
-
-                   
-                    var firstColumnName = type.GetProperties().First().Name;
-                    string tableName_sen = GetTableName(type);
-                    var ID = GetIDValue(el);
-
-                  
-                    firstColumnNamesAndReq.Add(firstColumnName);
-                    firstColumnNamesAndReq.Add(tableName_sen);
-                   
-
-                    foreach (var person in sen_and_jun)
-                    {
-                        if(person.Key == tableName_sen)
-                        {
-                            string tableName_jun = person.Value;
-                            firstColumnNamesAndReq.Add(tableName_jun);
-                            firstColumnNamesAndReq.Add(Convert.ToString(ID));
-                        }
-                    }
-
-                    if (el is User el_user)
-                    {
-                        firstColumnNamesAndReq.Add(el_user.FinalSalaryJun());
-
-
-                    }
-
-
-
-
+                    string tableName_jun = person.Value;
+                    firstColumnNamesAndReq.Add(tableName_jun);
+                    firstColumnNamesAndReq.Add(Convert.ToString(ID));
                 }
             }
+
+                firstColumnNamesAndReq.Add(el.FinalSalaryJun());
             // массив имен первых столбцов
             return firstColumnNamesAndReq.ToArray();
-            
         }
 
-        public static string GetTableName(Type type)
-        {
-            // имя класса во множественном числе
-            return type.Name + "s"; 
-        }
+
 
         public static object GetIDValue(object obj)
         {
