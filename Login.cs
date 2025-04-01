@@ -1,21 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.Entity;
 using System.Data.SQLite;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Media;
-using Microsoft.Data.Sqlite;
-using System.IO;
-using System.Windows.Shapes;
-using System.Reflection;
-using System.Windows.Media.Media3D;
-using System.Data.SqlTypes;
+
 
 namespace EMP_WPF_FR
 {

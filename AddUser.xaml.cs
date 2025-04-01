@@ -1,28 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Net.NetworkInformation;
-using System.Security.RightsManagement;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using Microsoft.Data.Sqlite;
-using System.Data;
-using System.Data.Entity;
 using System.Data.SQLite;
 using System.Windows.Controls;
-using System.Windows.Documents;
 using System.Windows.Media;
-using System.IO;
-using System.Windows.Shapes;
-using System.Reflection;
-using System.Windows.Media.Media3D;
-using System.Windows.Controls.Primitives;
-using System.Security.Cryptography;
-using System.Data.SqlClient;
-using System.Windows.Input;
-using System.Web.UI.WebControls;
+
 
 namespace EMP_WPF_FR
 {
