@@ -46,27 +46,6 @@ namespace EMP_WPF_FR
 
         public User() { }
 
-      
-        
-
-        public User(string FIO, string Login, string Password)
-        {
-
-            this.FIO = FIO;
-            this.Login = Login;
-            this.Password = Password;
-
-        }
-
-        public User(string FIO, string Login, string Password, string DateWork, double Salary, int ID_sen)
-        {
-            this.FIO = FIO;
-            this.Login = Login;
-            this.Password = Password;
-            this.DateWork = DateWork;
-            this.Salary = Salary;
-
-        }
 
         public User(string FIO, string Login, string Password, string DateWork, double Salary)
         {
@@ -341,7 +320,7 @@ namespace EMP_WPF_FR
                     WHEN (jun.Salary + jun.Salary * 0.40) > (jun.Salary + jun.Salary * (0.05 * {experienceCalc}))
                     THEN (jun.Salary + jun.Salary * (0.05 * {experienceCalc}))
                     ELSE (jun.Salary + jun.Salary * 0.40)
-                END
+                    END
             )
         END +
         (SELECT COALESCE(SUM(
@@ -355,8 +334,8 @@ namespace EMP_WPF_FR
                         WHEN (emp.Salary + emp.Salary * 0.30) > (emp.Salary + emp.Salary * (0.03 * {JualyDay("emp")}))
                         THEN (emp.Salary + emp.Salary * (0.03 * {JualyDay("emp")}))
                         ELSE (emp.Salary + emp.Salary * 0.30)
-                    END * 0.005)
-            END), 0)
+                        END * 0.005)
+                END), 0)
         FROM Employees emp 
         WHERE emp.JuniorManagerID = jun.JuniorManagerID)
         FROM JuniorManagers jun 
@@ -365,6 +344,8 @@ namespace EMP_WPF_FR
             double Result = base.resSalary(Salary, query, DateWork, 0.05, 0.40, 0.005);
             return Result;
         }
+
+
         public override string FinalSalaryJun()
         {
             LimitDate(DateWork);
@@ -378,32 +359,32 @@ namespace EMP_WPF_FR
 
             return $@"
         CASE
-        WHEN julianday(substr(jun.DateWork, 7, 4) || '-' || 
-         substr(jun.DateWork, 4, 2) || '-' || 
-         substr(jun.DateWork, 1, 2)) > julianday('{currentDateFormatted}')
-         THEN 0
-        ELSE (
+            WHEN julianday(substr(jun.DateWork, 7, 4) || '-' || 
+                substr(jun.DateWork, 4, 2) || '-' || 
+                substr(jun.DateWork, 1, 2)) > julianday('{currentDateFormatted}')
+            THEN 0
+            ELSE (
         CASE
             WHEN (jun.Salary + jun.Salary * 0.40) > (jun.Salary + jun.Salary * (0.05 * {experienceCalc}))
             THEN (jun.Salary + jun.Salary * (0.05 * {experienceCalc}))
             ELSE (jun.Salary + jun.Salary * 0.40)
-        END)
+            END)
     
-        END +
+            END +
         (SELECT COALESCE(SUM(
-         CASE
-        WHEN julianday(substr(emp.DateWork, 7, 4) || '-' || 
-             substr(emp.DateWork, 4, 2) || '-' || 
-             substr(emp.DateWork, 1, 2)) > julianday('{currentDateFormatted}')
-        THEN 0
-        ELSE (
-            CASE
-                WHEN (emp.Salary + emp.Salary * 0.30) > (emp.Salary + emp.Salary * (0.03 * {JualyDay("emp")}))
-                THEN (emp.Salary + emp.Salary * (0.03 * {JualyDay("emp")}))
-                ELSE (emp.Salary + emp.Salary * 0.30)
+        CASE
+             WHEN julianday(substr(emp.DateWork, 7, 4) || '-' || 
+                substr(emp.DateWork, 4, 2) || '-' || 
+                substr(emp.DateWork, 1, 2)) > julianday('{currentDateFormatted}')
+            THEN 0
+            ELSE (
+        CASE
+            WHEN (emp.Salary + emp.Salary * 0.30) > (emp.Salary + emp.Salary * (0.03 * {JualyDay("emp")}))
+            THEN (emp.Salary + emp.Salary * (0.03 * {JualyDay("emp")}))
+            ELSE (emp.Salary + emp.Salary * 0.30)
             END * 0.005)
         
-         END), 0)
+             END), 0)
          FROM Employees emp 
          WHERE emp.JuniorManagerID = jun.JuniorManagerID)";
         }
@@ -438,7 +419,6 @@ namespace EMP_WPF_FR
         }
         public override string FinalSalaryJun()
         {
-            string query = $@"(SELECT {base.SalaryrequestForJun("0.03", "0.30", DateWork)} FROM Employees)";
             return base.SalaryrequestForJun("0.03", "0.30", DateWork);
         }
 
