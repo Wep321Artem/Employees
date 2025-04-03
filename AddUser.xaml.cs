@@ -5,6 +5,7 @@ using Microsoft.Data.Sqlite;
 using System.Data.SQLite;
 using System.Windows.Controls;
 using System.Windows.Media;
+using System.Collections;
 
 
 namespace EMP_WPF_FR
@@ -12,6 +13,23 @@ namespace EMP_WPF_FR
 
     public partial class AddUser : Window
     {
+         public Dictionary<string, string> ValueComboBoxPost = new Dictionary<string, string>()
+        {
+            ["Работник"] = "Employees",
+            ["Младший менеджер"] = "JuniorManagers",
+            ["Старший менеджер"] = "SeniorManagers",
+            ["Младший продавец"] = "JuniorSalesmans",
+            ["Старший продавец"] = "SeniorSalesmans"
+        };
+
+        public Dictionary<string, string> jun_and_sen = new Dictionary<string, string>()
+        {
+            ["Employees"] = "JuniorManagers",
+            ["JuniorManagers"] = "SeniorManagers",
+            ["JuniorSalesmans"] = "SeniorSalesmans"
+        };
+
+
         public AddUser()
         {
             InitializeComponent();
@@ -193,24 +211,8 @@ namespace EMP_WPF_FR
             }
         }
 
-        public string SetValue()
+        public void SetValue()
         {
-
-            var ValueComboBoxPost = new Dictionary<string, string>()
-            {
-                ["Работник"] = "Employees",
-                ["Младший менеджер"] = "JuniorManagers",
-                ["Старший менеджер"] = "SeniorManagers",
-                ["Младший продавец"] = "JuniorSalesmans",
-                ["Старший продавец"] = "SeniorSalesmans"
-            };
-
-            var jun_and_sen = new Dictionary<string, string>()
-            {
-                ["Employees"] = "JuniorManagers",
-                ["JuniorManagers"] = "SeniorManagers",
-                ["JuniorSalesmans"] = "SeniorSalesmans"
-            };
 
             // Получаем выбранную таблицу из ComboBox
             if (СhoiceComboBoxPost.SelectedItem is TextBlock selectedTextBlock)
@@ -221,35 +223,17 @@ namespace EMP_WPF_FR
                 {
                     string query = $@"Select FIO FROM {jun_and_sen[ValueComboBoxPost[selectedText]]}";
                     ComboBoxDirector(СhoiceComboBoxDirector, query);
-                    return selectedText;
+                   
 
                 }
 
             }
 
-            return "";
+           
 
         }
         public void AddUserMain()
-        {
-
-            var ValueComboBoxPost = new Dictionary<string, string>()
-            {
-                ["Работник"] = "Employees",
-                ["Младший менеджер"] = "JuniorManagers",
-                ["Старший менеджер"] = "SeniorManagers",
-                ["Младший продавец"] = "JuniorSalesmans",
-                ["Старший продавец"] = "SeniorSalesmans"
-            };
-
-            var jun_and_sen = new Dictionary<string, string>()
-            {
-                ["Employees"] = "JuniorManagers",
-                ["JuniorManagers"] = "SeniorManagers",
-                ["JuniorSalesmans"] = "SeniorSalesmans"
-            };
-
-             
+        {   
 
             // Получаем выбранную таблицу из ComboBox
             if (СhoiceComboBoxPost.SelectedItem is TextBlock selectedTextBlock)
